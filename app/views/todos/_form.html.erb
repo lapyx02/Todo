@@ -1,0 +1,22 @@
+<% if todo.errors.any? %>
+  <h3>Сохранению мешают следующие ошибки:</h3>
+  <ul>
+    <% todo.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_for todo do |f| %>
+  <p>
+    <%= f.label :name %> <br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %> <br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.button %>
+  </p>
+
+<% end %>

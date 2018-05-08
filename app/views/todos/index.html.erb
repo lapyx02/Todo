@@ -1,0 +1,17 @@
+<h1>Список Задач</h1>
+<table>
+  <tbody>
+    <%= link_to 'Создать новую задау', new_todo_path %>
+    <% @todos.each do |todo| %>
+      <tr>
+       <td><%= todo.name %> </td>
+       <td><%= todo.description %> </td>
+       <td><%= link_to 'Просмотреть', todo_path(todo) %> </td>
+       <td><%= link_to 'Изменить', edit_todo_path(todo) %> </td>
+       <td><%= link_to 'Удалить', todo_path(todo), method: :delete %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h2>Создать запись</h2>
+<%= render partial: 'form', locals: {todo: Todo.new} %>

@@ -1,0 +1,9 @@
+<h1> <%= @todo.name %> </h1>
+<p> 
+    <%= @todo.description %>
+</p>
+
+
+
+<%= link_to 'Редактировать', edit_todo_path(@todo) %>
+<%= link_to 'Вернуться к списку', todos_path %>
